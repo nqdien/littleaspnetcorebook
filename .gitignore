@@ -1,4 +1,3 @@
-.vscode/*
+.vscode/
 [Oo]bj/
 [Bb]in/
-!.vscode/test3/
