@@ -37,6 +37,15 @@ namespace AspNetCoreTodo
             services.AddTransient<IEmailSender, EmailSender>();
             // services.AddScoped<ITodoItemService, FakeTodoItemService>();
             services.AddScoped<ITodoItemService, TodoItemService>();
+
+            services
+                .AddAuthentication()
+                .AddFacebook(options =>
+                {
+                    options.AppId = Configuration["Facebook:AppId"];
+                    options.AppSecret = Configuration["Facebook:AppSecret"];
+                });
+
             services.AddMvc();
         }
 
